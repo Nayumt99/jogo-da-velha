@@ -1,8 +1,6 @@
 # Jogo da Velha
 
 
-# Jogo da Velha
-
 Este é um jogo da velha simples criado com HTML, CSS e JavaScript.
 
 ## Como Jogar
@@ -23,9 +21,15 @@ Este é um jogo da velha simples criado com HTML, CSS e JavaScript.
 
 ## Próximos Passos
 
-- Melhorar o design e a experiência do usuário.
-- Implementar uma opção de reiniciar o jogo sem atualizar a página.
-- Adicionar animações para melhorar a aparência.
+- Melhorar o design e a experiência do usuário.- Atualizado a cada versão.
+- Implementar uma opção de reiniciar o jogo sem atualizar a página. - Incluso na versão 2.0
+- Adicionar animações para melhorar a aparência. - Programado para versão 2.1
+
+## Novas Funcionalidas - versão 2.0
+
+- Adicionado a opção de jogar contra o computador.
+- Adicionado o nível de jogo.
+- Adicionado a opção de reiniciar o jogo sem atualizar  a página
 
 ## Contribuindo
 
