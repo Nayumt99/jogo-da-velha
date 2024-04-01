@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jogo da Velha</title>
   <style>
+    /* Estilos CSS aqui */
     body {
       font-family: Arial, sans-serif;
     }
@@ -13,6 +14,16 @@
       max-width: 600px;
       margin: 0 auto;
       text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     h1 {
@@ -29,25 +40,41 @@
 
     .board {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 100px); /* Definindo largura fixa para as células */
+      grid-template-rows: repeat(3, 100px); /* Definindo altura fixa para as células */
       grid-gap: 5px;
       margin-bottom: 20px;
     }
 
     .cell {
-      width: 100px;
-      height: 100px;
       background-color: #eee;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 36px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cell:hover {
+      background-color: #f0f0f0;
     }
 
     #message {
       font-size: 24px;
       margin-bottom: 20px;
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     #scoreboard {
@@ -58,6 +85,25 @@
     #score {
       font-size: 18px;
     }
+
+    button {
+      margin-top: 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .bottom-button {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -67,6 +113,13 @@
       <input type="text" id="player1" placeholder="Jogador 1">
       <input type="text" id="player2" placeholder="Jogador 2">
       <button onclick="startGame()">Iniciar Jogo</button>
+      <label for="computer">Jogar contra o computador:</label>
+      <input type="checkbox" id="computer">
+      <select id="difficulty" style="margin-left: 10px;">
+        <option value="easy">Fácil</option>
+        <option value="medium" selected>Médio</option>
+        <option value="hard">Difícil</option>
+      </select>
     </div>
     <div class="board">
       <div class="cell" onclick="playerMove(0)"></div>
@@ -84,6 +137,8 @@
       <h2>Placar</h2>
       <div id="score"></div>
     </div>
+    <button onclick="restartGame()">Reiniciar Jogo</button>
+    <button class="bottom-button" onclick="toggleComputer()">Jogar contra o computador</button>
   </div>
 
   <script src="script.js"></script>
